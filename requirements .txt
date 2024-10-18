@@ -1,0 +1,5 @@
+fileinput
+pynput
+numpy
+cv2
+pyscreeze
