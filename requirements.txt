@@ -1,5 +1,4 @@
-fileinput
+simplejson
 pynput
 numpy
-cv2
 pyscreeze
